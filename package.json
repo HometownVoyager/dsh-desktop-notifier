@@ -1,0 +1,33 @@
+{
+  "name": "@dsh-external/dsh-desktop-notifier",
+  "version": "0.3.0",
+  "description": "桌面通知：任务完成/截断/失败/中止/被阻止/中断与确认/回答等待时弹系统 toast（win32 WinRT），按状态播 C:\\Windows\\Media 系统提示音",
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "BSD-3-Clause",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "cordis": ">=4.0.0-rc <5",
+    "schemastery": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "smoke": "node scripts/smoke.mjs",
+    "check:toast": "node scripts/toast-check.mjs"
+  }
+}

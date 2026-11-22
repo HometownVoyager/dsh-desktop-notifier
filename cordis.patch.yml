@@ -1,0 +1,8 @@
+# dsh-desktop-notifier bundle 层：把桌面通知挂进引导列表（宿主级，监听全局 session/event）。
+# 插件行按包名引用，Node 模块解析经 profile 的 node_modules junction 找到本包。
+# 配置省略时走插件 Config 缺省：完成/截断/失败/确认四类全开、子代理不通知、
+# 冷却 3000ms、标题前缀 DSH、调试日志关。
+- insert:
+    - id: dsh-desktop-notifier
+      name: '@dsh-external/dsh-desktop-notifier'
+      config: {}
